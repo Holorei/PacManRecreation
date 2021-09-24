@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 8218181d8d7b77147bc20a3e44e1772d
+guid: fc50ba0a44a416c4c98aea7e038962e4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5468928564218855654
-    second: walkingleftright_0
+      213: -3220040767054732860
+    second: powerPellet_0
   - first:
-      213: 3018847514632864384
-    second: walkingleftright_1
+      213: 9038520470519712849
+    second: powerPellet_1
   - first:
-      213: 1986301346974192121
-    second: walkingleftright_2
-  - first:
-      213: -4308127372748972819
-    second: walkingleftright_3
+      213: 7810926463292625629
+    second: powerPellet_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,13 +112,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walkingleftright_0
+      name: powerPellet_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 128
+        x: 36
+        y: 156
+        width: 52
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c12d6d9bfd1053d0800000000000000
+      internalID: -3220040767054732860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: powerPellet_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 156
         width: 64
-        height: 120
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,62 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e08044bd8985eb40800000000000000
-      internalID: 5468928564218855654
+      spriteID: 15c8c64da764f6d70800000000000000
+      internalID: 9038520470519712849
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walkingleftright_1
+      name: powerPellet_2
       rect:
         serializedVersion: 2
-        x: 148
-        y: 128
-        width: 68
-        height: 120
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08243cce1d915e920800000000000000
-      internalID: 3018847514632864384
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walkingleftright_2
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 0
-        width: 80
-        height: 120
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f1d64b1d82c09b10800000000000000
-      internalID: 1986301346974192121
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walkingleftright_3
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 0
+        x: 28
+        y: 28
         width: 76
-        height: 120
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,8 +168,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dec192cdaf47634c0800000000000000
-      internalID: -4308127372748972819
+      spriteID: dd2514bfb3cf56c60800000000000000
+      internalID: 7810926463292625629
       vertices: []
       indices: 
       edges: []
@@ -201,7 +177,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 84c64c3f85815d74a922db9fab272284
     internalID: 0
     vertices: []
     indices: 
