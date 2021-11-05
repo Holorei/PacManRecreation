@@ -19,14 +19,30 @@ public class PacStudentController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         GetMovementInput();
+
 
     }
 
     void FixedUpdate()
     {
-        Movement();
-        WalkingAnimation();
+        if (CheckCanTurn())
+        {
+            currentInput = lastInput;
+            Movement();
+            WalkingAnimation();
+        }
+        else if (!CheckCanTurn() && currentInput == lastInput)
+        {
+            //nothing
+        }
+        else
+        {
+            Movement();
+            WalkingAnimation();
+        }
+
     }
 
     void GetMovementInput()
@@ -34,20 +50,19 @@ public class PacStudentController : MonoBehaviour
         if (Input.GetKeyDown("d"))
         {
 
-            currentInput = MovementDirections.Right;
-            Debug.Log("1111");
+            lastInput = MovementDirections.Right;
         }
         else if (Input.GetKeyDown("a"))
         {
-            currentInput = MovementDirections.Left;
+            lastInput = MovementDirections.Left;
         }
         else if (Input.GetKeyDown("w"))
         {
-            currentInput = MovementDirections.Up;
+            lastInput = MovementDirections.Up;
         }
         else if (Input.GetKeyDown("s"))
         {
-            currentInput = MovementDirections.Down;
+            lastInput = MovementDirections.Down;
         }
 
     }
@@ -88,25 +103,60 @@ public class PacStudentController : MonoBehaviour
         t += Time.fixedDeltaTime;
         if (currentInput == MovementDirections.Up)
         {
-            UD = 70.0f; LR = 0f;
+
+            UD = 3f; LR = 0f;
             transform.position = Vector2.Lerp(transform.position, new Vector2(transform.position.x + LR, transform.position.y + UD), t);
         }
         else if (currentInput == MovementDirections.Down)
         {
-            UD = -70.0f; LR = 0f;
+            UD = -3f; LR = 0f;
             transform.position = Vector2.Lerp(transform.position, new Vector2(transform.position.x + LR, transform.position.y + UD), t);
         }
         else if (currentInput == MovementDirections.Left)
         {
-            LR = -70.0f; UD = 0f;
+            LR = -3f; UD = 0f;
             transform.position = Vector2.Lerp(transform.position, new Vector2(transform.position.x + LR, transform.position.y + UD), t);
         }
         else if (currentInput == MovementDirections.Right)
         {
-            LR =  70.0f; UD = 0f;
-            transform.position = Vector2.Lerp(transform.position, new Vector2(transform.position.x + LR, transform.position.y + UD), t);
+                LR = 3f; UD = 0f;
+                transform.position = Vector2.Lerp(transform.position, new Vector2(transform.position.x + LR, transform.position.y + UD), t);
+
         }
 
         t = 0;
     }
+
+    bool CheckCanTurn()
+    {
+        Vector2 rayDirection = Vector2.zero;
+        switch (lastInput)
+        {
+            case MovementDirections.Right:
+                rayDirection = Vector3.right;
+                break;
+
+            case MovementDirections.Left:
+                rayDirection = Vector3.left;
+                break;
+
+            case MovementDirections.Up:
+                rayDirection = Vector3.up;
+                break;
+
+            case MovementDirections.Down:
+                rayDirection = Vector3.down;
+                break;
+
+        }
+        RaycastHit2D isHit = Physics2D.Raycast(gameObject.transform.position, rayDirection, 0.7f);
+
+        if (isHit)
+        {
+            Debug.Log("Raycast hit: " + isHit.collider.name);
+            return false;
+        }
+        return true;
+    }
+
 }
